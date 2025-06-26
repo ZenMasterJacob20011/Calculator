@@ -9,9 +9,9 @@ public:
         rectangle.setOutlineColor(sf::Color::Red);
         rectangle.setOutlineThickness(1);
         rectangle.setPosition({pos_x, pos_y});
-        text.setPosition({pos_x, pos_y});
-        std::cout << "button created at X Position: " << pos_x << std::endl;
-        std::cout << "button created at Y Position: " << pos_y << std::endl << std::endl;
+        int textWidth = text.getLocalBounds().size.x;
+        int textHeight = text.getLocalBounds().size.y;
+        text.setPosition({pos_x + width / 2 - textWidth, pos_y + height / 2 - textHeight});
     }
 
 private:
