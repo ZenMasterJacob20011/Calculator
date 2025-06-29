@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Button.cpp"
-
+#include "Sprites.cpp"
 
 int main() {
     constexpr float window_width = 500;
@@ -11,16 +11,14 @@ int main() {
                             "SFML window");
     constexpr int rows = 6;
     constexpr int cols = 4;
-    std::vector<std::vector<Button> > buttons;
     float topOffset = window_height - button_height * 6;
-    sf::Font font("ARIAL.TTF");
+    std::vector<std::vector<Button>> buttons;
     for (int i = 0; i < rows; ++i) {
-        buttons.emplace_back();
         for (int j = 0; j < cols; ++j) {
-            sf::RectangleShape rectangle;
-            Button button(font, "1", j * (window_width / 4), topOffset + i * (window_height / 9), window_width / 4,
+            buttons.emplace_back();
+            Button button(textures[i][j], j * (window_width / 4), topOffset + i * (window_height / 9), window_width / 4,
                           window_height / 9);
-            buttons[i].push_back(button);
+            buttons[i].emplace_back(button);
         }
     }
     // const sf::Font font("arial.ttf");
