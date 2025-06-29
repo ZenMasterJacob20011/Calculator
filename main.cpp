@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include "Button.cpp"
-#include "Sprites.cpp"
+#include "Button.hpp"
+#include "Sprites.hpp"
 
 int main() {
     constexpr float window_width = 500;
@@ -21,12 +21,6 @@ int main() {
             buttons[i].emplace_back(button);
         }
     }
-    // const sf::Font font("arial.ttf");
-    // sf::Text text(font, "1");
-    // text.setCharacterSize(30);
-    // text.setStyle(sf::Text::Bold);
-    // text.setFillColor(sf::Color::Red);
-    // button.text = text;
     while (window.isOpen()) {
         window.clear();
         while (const std::optional event = window.pollEvent()) {

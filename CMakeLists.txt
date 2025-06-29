@@ -14,7 +14,7 @@ FetchContent_Declare(SFML
 )
 FetchContent_MakeAvailable(SFML)
 
-add_executable(Calculator main.cpp Button.cpp)
+add_executable(Calculator main.cpp Button.cpp Button.hpp Sprites.cpp Sprites.hpp)
 target_include_directories(Calculator PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_compile_features(Calculator PRIVATE cxx_std_17)
 target_link_libraries(Calculator PRIVATE SFML::Graphics)
