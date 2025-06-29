@@ -1,3 +1,5 @@
+#include "SFML/Graphics/Texture.hpp"
+#include "Sprites.hpp"
 sf::Texture percent("icons/percentage.png");
 sf::Texture ce("icons/ce.png");
 sf::Texture c("icons/c.png");
