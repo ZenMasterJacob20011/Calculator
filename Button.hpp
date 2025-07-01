@@ -7,6 +7,12 @@ public:
 
     Button(sf::Texture tmp_texture);
 
+    sf::RectangleShape getRectangle() const {
+        return rectangle;
+    }
+
+    bool isPointInside(float x, float y) const;
+
 private:
     sf::RectangleShape rectangle;
     sf::Sprite symbol;
