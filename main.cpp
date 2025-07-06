@@ -10,7 +10,7 @@ void handleMouseEvent(const sf::Event::MouseButtonPressed &mouse_button_pressed,
         for (const std::vector<Button> &button_rows: buttons) {
             for (Button button: button_rows) {
                 if (button.isPointInside(mouse_button_pressed.position.x, mouse_button_pressed.position.y)) {
-                    std::cout << "A button was pressed" << std::endl;
+                    button.action();
                 }
             }
         }
@@ -31,7 +31,8 @@ int main() {
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             buttons.emplace_back();
-            Button button(textures[i][j], j * (window_width / 4), topOffset + i * (window_height / 9), window_width / 4,
+            Button button(textures_name[i][j], textures[i][j], j * (window_width / 4),
+                          topOffset + i * (window_height / 9), window_width / 4,
                           window_height / 9);
             buttons[i].emplace_back(button);
         }

@@ -24,6 +24,34 @@ sf::Texture six("icons/6.png");
 sf::Texture seven("icons/seven.png");
 sf::Texture eight("icons/eight.png");
 sf::Texture nine("icons/9.png");
+
+enum class Symbol {
+    Percent,
+    CE,
+    C,
+    Backspace,
+    OneOverX,
+    XSquared,
+    SquareRootX,
+    Divide,
+    Multiply,
+    PlusOverMinus,
+    Dot,
+    Equal,
+    Minus,
+    Plus,
+    Zero,
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nine
+};
+
 sf::Texture textures[6][4] = {
     {percent, ce, c, backspace},
     {one_over_x, x_squared, square_root_x, divide},
@@ -31,4 +59,13 @@ sf::Texture textures[6][4] = {
     {four, five, six, minus},
     {one, two, three, plus},
     {plus_over_minus, zero, dot, equal}
+};
+
+Symbol textures_name[6][4] = {
+    {Symbol::Percent, Symbol::CE, Symbol::C, Symbol::Backspace},
+    {Symbol::OneOverX, Symbol::XSquared, Symbol::SquareRootX, Symbol::Divide},
+    {Symbol::Seven, Symbol:: Eight, Symbol::Nine, Symbol::Multiply},
+    {Symbol::Four, Symbol::Five, Symbol::Six, Symbol::Minus},
+    {Symbol::One, Symbol::Two, Symbol::Three, Symbol::Plus},
+    {Symbol::PlusOverMinus, Symbol::Zero, Symbol::Dot, Symbol::Equal}
 };
