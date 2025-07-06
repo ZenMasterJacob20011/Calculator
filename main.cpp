@@ -31,9 +31,10 @@ int main() {
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             buttons.emplace_back();
-            Button button(textures_name[i][j], textures[i][j], j * (window_width / 4),
-                          topOffset + i * (window_height / 9), window_width / 4,
-                          window_height / 9);
+            const float button_width_spacing = j == cols - 1 ? 10 : 5;
+            Button button(textures_name[i][j], textures[i][j], j * (window_width / 4) + 5,
+                          topOffset + i * (window_height / 9), window_width / 4 - button_width_spacing,
+                          window_height / 9 - 5);
             buttons[i].emplace_back(button);
         }
     }
