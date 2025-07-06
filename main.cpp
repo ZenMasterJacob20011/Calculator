@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Button.hpp"
+#include "Input.hpp"
 #include "Sprites.hpp"
 
 void handleMouseEvent(const sf::Event::MouseButtonPressed &mouse_button_pressed,
@@ -37,6 +38,8 @@ int main() {
             buttons[i].emplace_back(button);
         }
     }
+    sf::Sprite sprite(textures[5][1]);
+    Input input(0, sprite);
     while (window.isOpen()) {
         window.clear(sf::Color::White);
         while (const std::optional event = window.pollEvent()) {
@@ -51,7 +54,7 @@ int main() {
                 window.draw(buttons[i][j]);
             }
         }
-        // window.draw(b);
+        window.draw(input);
         window.display();
     }
     return 0;
