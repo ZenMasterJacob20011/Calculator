@@ -38,7 +38,7 @@ int main() {
         }
     }
     while (window.isOpen()) {
-        window.clear();
+        window.clear(sf::Color::White);
         while (const std::optional event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
                 window.close();
