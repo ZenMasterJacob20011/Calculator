@@ -6,7 +6,8 @@ Button::Button(const Symbol &name, const sf::Texture &t_symbol, float pos_x, flo
        float height): symbol(t_symbol) {
     this->name = name;
     rectangle.setSize(sf::Vector2f(width, height));
-    rectangle.setOutlineColor(sf::Color::Red);
+    constexpr sf::Color button_outline_color(218, 220, 224);
+    rectangle.setOutlineColor(button_outline_color);
     rectangle.setOutlineThickness(1);
     rectangle.setPosition({pos_x, pos_y});
     float symbol_x_offset = width / 2 - symbol.getGlobalBounds().size.x / 2;
