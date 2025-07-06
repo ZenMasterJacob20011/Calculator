@@ -6,7 +6,6 @@
 
 void handleMouseEvent(const sf::Event::MouseButtonPressed &mouse_button_pressed,
                       const std::vector<std::vector<Button> > &buttons) {
-    //Loop through the buttons and check if the mouse button pressed coordinates fall inbetween button area
     if (mouse_button_pressed.button == sf::Mouse::Button::Left) {
         for (const std::vector<Button> &button_rows: buttons) {
             for (Button button: button_rows) {
@@ -39,7 +38,7 @@ int main() {
         }
     }
     sf::Sprite sprite(textures[5][1]);
-    Input input(0, sprite);
+    Input input(0, sprite, window_width, window_height);
     while (window.isOpen()) {
         window.clear(sf::Color::White);
         while (const std::optional event = window.pollEvent()) {

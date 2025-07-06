@@ -2,7 +2,7 @@
 
 class Input : public sf::Drawable {
 public:
-    Input(float value, sf::Sprite &drawable_input);
+    Input(float value, sf::Sprite &drawable_input, float window_width, float window_height);
 
     float get_value() const {
         return value;
